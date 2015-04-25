@@ -55,13 +55,3 @@ footer {
   padding: 5px 15px;
   color: #dfdfdf;
 }
-
-fieldset{
-  border: 0px solid rgb(255,232,57);
-  width: 400px;
-  margin:auto;
-}
-table#space {
-  border-collapse: separate;
-  border-spacing: 10px 5px;
-}

@@ -11,51 +11,48 @@ block content
                     p
                         | Crear Bus
 
-                        fieldset
 
-                          form(method='post', action='buscar')
 
-                              | Nombre -
-                              input#txtAlias(type='text', name='Nombre', value='')
+                        form(action='/Crear_Bus', method='post')
+
+                          label Nombre:
+                          input(id='nombre', type='text', name='Nombre', value='')
                           p
 
-                              | Costo por kilometro -
-                              input#txtAlias(type='text', name='Km', value='')
+                          | Costo por kilometro -
+                          input(id='km', type='text', name='Km', value='')
                           p
-                              | Clase-
-                              input#txtCat(type='text', name='clase', value='')
+                          | Clase-
+                          input(id='clase', type='text', name='Clase', value='')
                           p
-                              input#search-submit(type='submit', value='Crear')
+                          input(type='submit', value='Crear')
 
                     p
                         | Editar Bus
 
-                        fieldset
 
-                          form(method='post', action='buscar')
+                        form(action='/Actualizar_Bus',method='post')
 
-                              | Nombre -
-                              input#txtAlias(type='text', name='Nombre', value='')
+                          | Nombre -
+                          input(id='nombre',type='text', name='Nombre', value='')
                           p
-                              | Costo por kilometro .
-                              input#txtAlias(type='text', name='Km', value='')
+                          | Costo por kilometro .
+                          input(id='km',type='text', name='Km', value='')
                           p
-                              | Clase -
+                          | Clase -
 
-                              input#txtCat(type='text', name='clase', value='')
+                          input(id='clase',type='text', name='Clase', value='')
                           p
-                              input#search-submit(type='submit', value='Actualizar')
+                          input(type='submit', value='Actualizar')
                     p
                         | Eliminar Bus
 
-                        fieldset
+                        form(method='post', action='/Eliminar_Bus')
 
-                          form(method='post', action='buscar')
-
-                             | Nombre -
-                             input#txtAlias(type='text', name='Nombre', value='')
+                          | Nombre -
+                          input(id='bus',type='text', name='bus', value='')
                           p
-                             input#search-submit(type='submit', value='Eliminar')
+                          input(type='submit', value='Eliminar')
 
                 div.contenedorpie
                     p
@@ -69,13 +66,13 @@ block content
 
                           form(method='post', action='buscar')
 
-                             | Bus -
-                             input#txtAlias(type='text', name='Bus', value='')
-                          p
-                             | Ruta -
-                             input#txtAlias(type='text', name='Ruta', value='')
-                          p
-                             input#search-submit(type='submit', value='Asignar')
+                            | Bus -
+                            input(type='text', name='Bus', value='')
+                            p
+                            | Ruta -
+                            input(type='text', name='Ruta', value='')
+                            p
+                            input(type='submit', value='Asignar')
 
                 div.contenedorpie
                     p
@@ -87,23 +84,23 @@ block content
 
                           form(method='post', action='buscar')
 
-                              | Cliente -
-                              input#txtAlias(type='text', name='Cliente', value='')
-                          p
+                            | Cliente -
+                            input(type='text', name='Cliente', value='')
+                            p
 
-                              | Ruta -
-                              input#txtAlias(type='text', name='ruta', value='')
-                          p
-                              | Inicio-
-                              input#txtCat(type='text', name='Inicio', value='')
-                          p
-                              | Fin-
-                              input#txtCat(type='text', name='Fin', value='')
-                          p
-                              | Nombre-
-                              input#txtCat(type='text', name='Nombre', value='')
-                          p
-                              input#search-submit(type='submit', value='Reservar')
+                            | Ruta -
+                            input(type='text', name='ruta', value='')
+                            p
+                            | Inicio-
+                            input(type='text', name='Inicio', value='')
+                            p
+                            | Fin-
+                            input(type='text', name='Fin', value='')
+                            p
+                            | Nombre-
+                            input(type='text', name='Nombre', value='')
+                            p
+                            input(type='submit', value='Reservar')
 
 
                 div.contenedorpie
@@ -116,13 +113,13 @@ block content
 
                           form(method='post', action='buscar')
 
-                             | Cliente -
-                             input#txtAlias(type='text', name='Cliente', value='')
-                          p
-                             | Ticket -
-                             input#txtAlias(type='text', name='Ticket', value='')
-                          p
-                             input#search-submit(type='submit', value='Pagar')
+                            | Cliente -
+                            input(type='text', name='Cliente', value='')
+                            p
+                            | Ticket -
+                            input(type='text', name='Ticket', value='')
+                            p
+                            input(type='submit', value='Pagar')
 
                 div.contenedorpie
                     p
@@ -143,3 +140,4 @@ block content
             div.contenedorpie
                 p
                     | Todos los derechos reservados
+
