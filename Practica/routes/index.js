@@ -116,7 +116,7 @@ var query = connection.query('SELECT PARADA FROM PARADA WHERE NOMBRE = ?', [req.
          if(resultado1.length > 0){
             console.log(resultado1[0].RUTA);
 
-              connection.query('INSERT INTO ASIGN_RUTA (PARADA,RUTA,ORDEN) VALUES (?,?)', [resultado[0].PARADA,resultado1[0].RUTA,req.body.Sec],
+              connection.query('INSERT INTO ASIGN_RUTA (RUTA,PARADA,ORDEN) VALUES (?,?,?)', [resultado[0].PARADA,resultado1[0].RUTA,req.body.Sec],
               function() {
               res.redirect('/');
               }
