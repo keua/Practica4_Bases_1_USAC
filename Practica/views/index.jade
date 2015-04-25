@@ -64,18 +64,31 @@ block content
                         | Crear_Ruta
 
 
-                        form(method='post', action='/Crear_Ruta')
+                        form(action='/Crear_Ruta',method='post')
 
                           | Nombre -
                           input(id='ruta',type='text', name='Ruta', value='')
                           p
                           input(type='submit', value='Crear_Ruta')
+                    p
+                        | Crear Parada
+
+
+                        form(action='/Crear_Parada',method='post')
+
+                          | Nombre -
+                          input(id='parada',type='text', name='Parada', value='')
+                          p
+                          | Localizacion -
+                          input(id='loca',type='text', name='Loca', value='')
+                          p
+                          input(type='submit', value='Crear_Parada')
 
                     p
                         | Asignar bus
 
 
-                        form(method='post', action='/Asignar_Bus')
+                        form(action='/Asignar_Bus',method='post')
 
                           | Bus -
                           input(id='bus',type='text', name='Bus', value='')

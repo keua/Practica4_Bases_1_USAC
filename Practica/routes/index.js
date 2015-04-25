@@ -46,5 +46,58 @@ router.post('/Eliminar_Bus', function(req, res) {
     );
 });
 
+router.post('/Crear_Ruta', function(req, res) {
+  connection.query('INSERT INTO RUTA (NOMBRE) VALUES (?)', [req.body.Ruta],
+      function() {
+        res.redirect('/');
+      }
+    );
+});
+
+router.post('/Crear_Parada', function(req, res) {
+  connection.query('INSERT INTO PARADA (NOMBRE,LOCALIZACION) VALUES (?,?)', [req.body.Parada,req.body.Loca],
+      function() {
+        res.redirect('/');
+      }
+    );
+});
+
+router.post('/Asignar_Bus', function(req, res) {
+var query = connection.query('SELECT BUS FROM BUS WHERE NOMBRE = ?', [req.body.Bus], function(error, result){
+      if(error){
+         throw error;
+      }else{
+         var resultado = result;
+         if(resultado.length > 0){
+            console.log(resultado[0].BUS);
+
+             var query = connection.query('SELECT RUTA FROM RUTA WHERE NOMBRE = ?', [req.body.Ruta], function(error, result){
+      if(error){
+         throw error;
+      }else{
+         var resultado1 = result;
+         if(resultado1.length > 0){
+            console.log(resultado1[0].RUTA);
+
+              connection.query('INSERT INTO ASIGN_BUS (BUS,RUTA) VALUES (?,?)', [resultado[0].BUS,resultado1[0].RUTA],
+              function() {
+              res.redirect('/');
+              }
+              );
+
+         }else{
+            console.log('Registro no encontrado');
+         }
+      }
+   } );
+
+         }else{
+            console.log('Registro no encontrado');
+         }
+      }
+   }
+);
+});
 
 module.exports = router;
+
