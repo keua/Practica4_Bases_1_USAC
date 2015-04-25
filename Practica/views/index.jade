@@ -1,0 +1,145 @@
+extends layout
+
+block content
+    div.contenedorprincipal
+        header
+            h1 #{title}
+        section
+            div.contenedorinfo
+                div.info
+                    h1 ABC de Buses
+                    p
+                        | Crear Bus
+
+                        fieldset
+
+                          form(method='post', action='buscar')
+
+                              | Nombre -
+                              input#txtAlias(type='text', name='Nombre', value='')
+                          p
+
+                              | Costo por kilometro -
+                              input#txtAlias(type='text', name='Km', value='')
+                          p
+                              | Clase-
+                              input#txtCat(type='text', name='clase', value='')
+                          p
+                              input#search-submit(type='submit', value='Crear')
+
+                    p
+                        | Editar Bus
+
+                        fieldset
+
+                          form(method='post', action='buscar')
+
+                              | Nombre -
+                              input#txtAlias(type='text', name='Nombre', value='')
+                          p
+                              | Costo por kilometro .
+                              input#txtAlias(type='text', name='Km', value='')
+                          p
+                              | Clase -
+
+                              input#txtCat(type='text', name='clase', value='')
+                          p
+                              input#search-submit(type='submit', value='Actualizar')
+                    p
+                        | Eliminar Bus
+
+                        fieldset
+
+                          form(method='post', action='buscar')
+
+                             | Nombre -
+                             input#txtAlias(type='text', name='Nombre', value='')
+                          p
+                             input#search-submit(type='submit', value='Eliminar')
+
+                div.contenedorpie
+                    p
+                        | .
+                div.info
+                    h1 Planificación o definición o distribución de rutas y buses
+                    p
+                        | Asignar bus
+
+                        fieldset
+
+                          form(method='post', action='buscar')
+
+                             | Bus -
+                             input#txtAlias(type='text', name='Bus', value='')
+                          p
+                             | Ruta -
+                             input#txtAlias(type='text', name='Ruta', value='')
+                          p
+                             input#search-submit(type='submit', value='Asignar')
+
+                div.contenedorpie
+                    p
+                        | .
+                div.info
+                    h1 Reservar boleto
+                    p
+                        fieldset
+
+                          form(method='post', action='buscar')
+
+                              | Cliente -
+                              input#txtAlias(type='text', name='Cliente', value='')
+                          p
+
+                              | Ruta -
+                              input#txtAlias(type='text', name='ruta', value='')
+                          p
+                              | Inicio-
+                              input#txtCat(type='text', name='Inicio', value='')
+                          p
+                              | Fin-
+                              input#txtCat(type='text', name='Fin', value='')
+                          p
+                              | Nombre-
+                              input#txtCat(type='text', name='Nombre', value='')
+                          p
+                              input#search-submit(type='submit', value='Reservar')
+
+
+                div.contenedorpie
+                    p
+                        | .
+                div.info
+                    h1 Pago de ticket
+                    p
+                        fieldset
+
+                          form(method='post', action='buscar')
+
+                             | Cliente -
+                             input#txtAlias(type='text', name='Cliente', value='')
+                          p
+                             | Ticket -
+                             input#txtAlias(type='text', name='Ticket', value='')
+                          p
+                             input#search-submit(type='submit', value='Pagar')
+
+                div.contenedorpie
+                    p
+                        | .
+                div.info
+                    h1 Consulta de viajes (detallado en el enunciado)
+                    p
+                        | Crear Bus
+
+            div.contenedorsidebar
+                div#sidebar
+                    h1 Datos
+                    p
+                        | Keneth Efren Ubeda Arriaza
+                    p
+                        | Carnet 201212728
+        footer
+            div.contenedorpie
+                p
+                    | Todos los derechos reservados
