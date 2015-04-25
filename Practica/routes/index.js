@@ -99,5 +99,43 @@ var query = connection.query('SELECT BUS FROM BUS WHERE NOMBRE = ?', [req.body.B
 );
 });
 
+router.post('/Asignar_Parada', function(req, res) {
+var query = connection.query('SELECT PARADA FROM PARADA WHERE NOMBRE = ?', [req.body.Parada], function(error, result){
+      if(error){
+         throw error;
+      }else{
+         var resultado = result;
+         if(resultado.length > 0){
+            console.log(resultado[0].PARADA);
+
+             var query = connection.query('SELECT RUTA FROM RUTA WHERE NOMBRE = ?', [req.body.Ruta], function(error, result){
+      if(error){
+         throw error;
+      }else{
+         var resultado1 = result;
+         if(resultado1.length > 0){
+            console.log(resultado1[0].RUTA);
+
+              connection.query('INSERT INTO ASIGN_RUTA (PARADA,RUTA) VALUES (?,?)', [resultado[0].PARADA,resultado1[0].RUTA],
+              function() {
+              res.redirect('/');
+              }
+              );
+
+         }else{
+            console.log('Registro no encontrado');
+         }
+      }
+   } );
+
+         }else{
+            console.log('Registro no encontrado');
+         }
+      }
+   }
+);
+});
+
+
 module.exports = router;
 
