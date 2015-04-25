@@ -59,20 +59,44 @@ block content
                         | .
                 div.info
                     h1 Planificación o definición o distribución de rutas y buses
+
+                    p
+                        | Crear_Ruta
+
+
+                        form(method='post', action='/Crear_Ruta')
+
+                          | Nombre -
+                          input(id='ruta',type='text', name='Ruta', value='')
+                          p
+                          input(type='submit', value='Crear_Ruta')
+
                     p
                         | Asignar bus
 
-                        fieldset
 
-                          form(method='post', action='buscar')
+                        form(method='post', action='/Asignar_Bus')
 
-                            | Bus -
-                            input(type='text', name='Bus', value='')
-                            p
-                            | Ruta -
-                            input(type='text', name='Ruta', value='')
-                            p
-                            input(type='submit', value='Asignar')
+                          | Bus -
+                          input(id='bus',type='text', name='Bus', value='')
+                          p
+                          | Ruta -
+                          input(id='ruta',type='text', name='Ruta', value='')
+                          p
+                          input(type='submit', value='Asignar_Bus')
+                    p
+                        | Asignar parada
+
+
+                        form(method='post', action='/Asignar_Parada')
+
+                          | Parada -
+                          input(id='parada',type='text', name='parada', value='')
+                          p
+                          | Ruta -
+                          input(id='ruta',type='text', name='Ruta', value='')
+                          p
+                          input(type='submit', value='Asignar Parada')
 
                 div.contenedorpie
                     p
